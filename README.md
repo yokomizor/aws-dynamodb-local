@@ -1,8 +1,16 @@
 How to run:
 
-  docker run --rm -it --nameaws-dynamodb-local-in-memory yokomizor/aws-dynamodb-local:in-memory
+    docker run --rm -it --name dynamodb -p 8000:8000 yokomizor/aws-dynamodb-local
 
-It will run DynamoDB into the port 8000. If you need to run in another port:
+Runing in memory:
 
-  docker run --rm -it --nameaws-dynamodb-local-in-memory -p 9456:8000 yokomizor/aws-dynamodb-local:in-memory
+    docker run --rm -it --name dynamodb -p 8000:8000 yokomizor/aws-dynamodb-local -inMemory
+
+Running in another port:
+
+    docker run --rm -it --name dynamodb -p 9999:8000 yokomizor/aws-dynamodb-local
+
+Help:
+
+    docker run --rm -it --name dynamodb -p 8000:8000 yokomizor/aws-dynamodb-local -help
 
